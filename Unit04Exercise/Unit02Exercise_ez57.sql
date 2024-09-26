@@ -11,7 +11,14 @@ SHOW TABLES;
 
 SELECT * FROM ez57.golfers;
 
-INSERT INTO golfers VALUES ( 100, 'Rich', '123 Main St.', '555-1234' );
+INSERT INTO
+    golfers
+VALUES (
+        100,
+        'Rich',
+        '123 Main St.',
+        '555-1234'
+    );
 
 INSERT INTO
     golfers
@@ -87,3 +94,27 @@ SELECT COUNT(score) AS games, AVG(score) AS average
 FROM ez57.games
 WHERE
     golferid = 103
+
+SELECT *
+FROM games
+    JOIN golfers ON games.golferid = golfers.golferid
+WHERE
+    games.golferid = 100;
+
+SELECT *
+FROM games
+    JOIN golfers ON games.golferid = golfers.golferid
+WHERE
+    games.golferid = 101;
+
+SELECT *
+FROM games
+    JOIN golfers ON games.golferid = golfers.golferid
+WHERE
+    games.golferid = 102;
+
+SELECT *
+FROM games
+    JOIN golfers ON games.golferid = golfers.golferid
+WHERE
+    games.golferid = 103;
